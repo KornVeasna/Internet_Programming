@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Exercise 2 To-do List with Session Storage</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="tailwind.js"></script>
+    </head>
+    <body>
+      <div class="wrapper">
+        <div class="w-1/2 h-fit align-center justify-center">
+          <div class="title w-full h-fit text-center align-center justify-center space x-2 font-bold">To-do List with session storage</div><br>
+          <div class="input bg-slate-300 flex items-center justify-center align-center h-20  rounded-xl p-4">
+              <div class="input-title w-1/4 ml-3 mr-3">
+                  <div>Task title</div>
+                  <input type="text" id="title" text-align= center placeholder= " Title" class="h-12 w-full border-white border-2 rounded-xl">
+              </div>
+              <div class="input-assignee w-1/4 ml-3 mr-3">
+                  <div>Assignee</div>
+                  <input type="text" id="assignee" text-align= center placeholder= " John" class="h-12 w-full border-white border-2 rounded-xl">
+              </div>
+              <div class="input-deadline w-1/4 ml-3 mr-3">
+                  <div>Deadline</div>
+                  <input type="date" id="deadline" class="h-12 w-full border-white border-2 rounded-xl">
+              </div>
+              <div class="input-deadline w-fit ml-3 mr-3">
+                  <div>
+                  <input type="button" id="add-btn" class="h-10 w-16 bg-blue-400 rounded-xl text-cyan-60" value="Add">
+                  </div>
+              </div>
+          </div>
+
+          <div id="list-wrapper"></div>
+
+          
+      </div>
+      </div>
+        <script src="index.js"></script>
+    </body>
+</html>

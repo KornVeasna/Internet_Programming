@@ -1,0 +1,14 @@
+body{
+	background-color: rgba(0, 0, 0, 0.878);
+}
+
+div{
+	height: 3rem;
+	width: 8rem;
+	background-color: white;
+	border: none;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

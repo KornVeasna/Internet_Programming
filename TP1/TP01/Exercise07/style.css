@@ -1,0 +1,16 @@
+
+.wrapper{
+    margin: auto;
+    background-color: rgb(116, 184, 184);
+    width: 400px;
+    height: 600px;
+    background-color: yellow;
+    width: clamp(0px,50%,300px);
+}
+@media (min-width: 300px) and (max-width: 792px){
+    .wrapper{
+        background-color: rgb(255, 0, 0);
+        width: clamp(300px,100%,800px);
+    }
+}
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4 Crud</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form autocomplete="on" onsubmit="onFormSubmit()">
+            <div class="add">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name_book" placeholder="c programming" onclick="if(this.placeholder == 'c programming') {this.placeholder = ''}" onBlur="if(this.placeholder == '') {this.placeholder = 'c programming'}" />
+                <label for="category">Category: </label>
+                <input type="text" name="category" id="category_book" placeholder="coding" onclick="if(this.placeholder == 'coding') {this.placeholder = ''}" onBlur="if(this.placeholder == '') {this.placeholder = 'coding'}" />
+                <label for="price">Price: </label>
+                <input type="text" name="price" id="price_book" placeholder="1,000 riels" onclick="if(this.placeholder == '1,000 riels') {this.placeholder = ''}" onBlur="if(this.placeholder == '') {this.placeholder = '1,000 riels'}" />
+                
+                <button type="submit" class="add_book">Add</button>
+                <button type="submit" class="edit_book">Update</button>
+
+            </div>
+        </form>
+        <div class="home" id="add_items">
+        </div>
+    </div>
+    <script async src="./crud.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+
+.row-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.column-wrapper{
+   float: left;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 30px;
+    border: 1px solid black;
+    background-color: rgb(90, 90, 220);
+    margin: 2px;   
+}

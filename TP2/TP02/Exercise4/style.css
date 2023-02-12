@@ -1,0 +1,43 @@
+body {
+    background-color: rgba(181, 201, 244, 0.5);
+}
+
+#canvas, #canvasp {
+    border: 10px solid rgba(149, 199, 231, 0.8);
+    border-top: 5px solid rgba(62, 100, 113, 0.8);
+    background-color: rgba(31, 51, 57, 0.83);
+}
+
+.control {
+    background-color: rgba(153,153, 153, 0.8);
+    width: 620px;
+}
+
+.control> span {
+    color: #fafafa;
+}
+
+.control>div>button {
+    margin-bottom: 5px;
+    color: #fafafa;
+    border: 2px solid #fafafa;
+    border-radius: 5%;
+    margin-top: 3px;
+}
+
+
+#start {
+    background-color: rgba(24,119, 242, 1);
+
+}
+
+#stop {
+    background-color: rgba(244, 67, 54, 0.8);
+
+}
+
+#pause {
+    background-color: rgba(205, 200, 62, 0.8);
+
+}
+

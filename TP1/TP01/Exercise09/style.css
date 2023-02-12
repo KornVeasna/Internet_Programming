@@ -1,0 +1,19 @@
+
+.container{
+    margin: auto;
+    overflow: scroll;
+    width: 500px;
+    height: 400px;
+}
+.header{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: auto;
+    color: white;
+    background-color: gray;
+    overflow: hidden;
+}
+

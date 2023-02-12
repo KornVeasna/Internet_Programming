@@ -1,0 +1,53 @@
+
+.Main_box{
+    margin: auto;
+    width: 500px;
+    height: 400px;
+    background-color: black(220, 10, 10);
+    border: 4px solid black;
+}
+.sub_box1{
+    width: 100%;
+    height: 30%;
+    background-color: rgb(155, 148, 148);
+}
+.box1-sub-1{
+    width: 25%;
+    height: 100%;
+    background-color: rgb(217, 141, 178);
+}
+.sub-box2{
+    width: 100%;
+    height: 70%;
+    background-color: rgb(52, 66, 47);
+}
+.column-1{
+    float: left;
+    width: 25%;
+    height: 100%;
+    background-color: rgb(70, 50, 77);
+}
+.column-2{
+    float: left;
+    width: 25%;
+    height: 100%;
+    background-color: rgb(57, 67, 71);
+}
+.column-3{
+    float: left;
+    width: 25%;
+    height: 100%;
+    background-color: rgb(66, 43, 62);
+}
+.column-4{
+    float: left;
+    width: 25%;
+    height: 100%;
+    background-color: rgb(196, 154, 181);
+}
+.sub-row{
+    width: 100%;
+    height: 50%;
+    background-color: rgb(79, 115, 62);
+}
+

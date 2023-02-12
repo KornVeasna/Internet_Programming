@@ -1,0 +1,136 @@
+body {
+    background-color: rgba(241, 238, 238, 0.899);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.add {
+    height: 100vh;
+    width: 195px;
+    background-color: rgb(247, 245, 238);
+    position: fixed;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.add>div {
+    text-align: center;
+    color: #ffffff;
+    background-color: rgb(197, 190, 190);
+    margin-bottom: 20px;
+    font-size: medium;
+    padding-top: 15px 10px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.add input[type=text] {
+    width: 100%;
+    border: 2px solid rgb(58, 58, 60);
+    border-radius: 5px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: .3s;
+}
+
+.add input[type=text]:focus {
+    border-color: rgb(233, 237, 240);
+    box-shadow: 0 0 8px 0 rgb(218, 224, 229);
+}
+
+.add .edit_book {
+    visibility: hidden;
+}
+
+.add_book,.edit_book {
+    background-color: rgb(184, 189, 182);
+    color: rgb(14, 13, 13);
+    border-style: outset;
+    border-color: #0a3953;
+    height: 25px;
+    width: 50px;
+    font: 15px arial, sans-serif;
+    text-shadow: none;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.edit_book {
+    background-color: rgb(196, 202, 211);
+}
+
+.home {
+    height: auto;
+    width: 1000px;
+    top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 260px;
+    border-radius: 2px;
+    background-color: #fdf5f5fc;
+}
+
+.home .book-info {
+    background-color: rgb(216, 228, 229);
+    padding-top: 15px;
+    text-align: center;
+    height: 35px;
+    color: #292727;
+    position: sticky;
+    width: 820px;
+    margin: 10px 0 10px 10px 10px;
+    border-radius: 5px;
+}
+
+.home .items {
+    text-align: center;
+    width: 28%;
+    margin: 1%;
+    margin-left: 1%;
+    box-shadow: rgba(17, 17, 26, 0.2) 0px 4px 17px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    border-radius: 15px;
+}
+
+.items>img {
+    margin: 10px 10px;
+}
+
+.items .name,.price,.category {
+    text-align: start;
+    margin: 10px 10px;
+}
+
+.button {
+    margin: 10px 5px;
+}
+
+.button .editBtn,.deleteBtn {
+    border-radius: 5px;
+    background-color: rgb(235, 225, 225);
+    color: rgb(51, 49, 49);
+    border-style: outset;
+    text-shadow: none;
+    height: 35px;
+}
+
+.deleteBtn {
+    margin-left: 5px;
+    background-color: rgb(235, 225, 225);
+}
+
+.edit_book {
+    margin-left: -55px;
+    text-align: center;
+    width: 60px;
+}
+
+.items>img {
+    height: 100px;
+    width: 100px;
+}

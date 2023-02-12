@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    background-color: gray;
+    padding: 3px;
+    text-align: center;
+    color: white;
+    width: fit-content;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+#project {
+    margin: 5px;
+    margin-left: 150px;
+    padding: 0px;
+    width: fit-content;
+    background-color: rgb(11, 23, 27);
+}
+
+button {
+    height: 30px;
+    width: 80px;
+    border: 0px;
+    border-radius: 3px;
+}
+
+#canvasVideo {
+    border : 1px solid black;
+    width: 550px;
+    height: 350px;
+    background-color: white;
+}
+
+#canvasVideoProject {
+    border: 1px solid black;
+    width: 550px;
+    height: 350px;
+    background-color: white;
+}
