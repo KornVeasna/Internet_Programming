@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5 Nav-bar</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./navbar.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="logo"><a href="http://youtube.com">NAV-BAR</a></div>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <ul class="social">
+            <li><a href="#"><i class='bx bxl-facebook-circle'></i></a></li>
+            <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+            <li><a href="#"><i class='bx bxl-meta'></i></a></li>
+            <li><a href="#"><i class='bx bxl-linkedin-square' ></i></a></li>
+            <li><a href="#"><i class='bx bxs-diamond' ></i></a></li>
+        </ul>
+        <div class="hamburger-menu" onclick="enable_menu()">
+            <a href="#"><i class='bx bx-menu' id="icon-ham"></i></a>
+        </div>
+    </div>
+    <div class="sub-bar" id="my-nav">
+        <ul class="sub-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    
+    <script src="./navbar.js"></script>
+</body>
+</html>
