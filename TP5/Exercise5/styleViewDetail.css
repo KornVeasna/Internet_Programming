@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.main{
+    width: 900px;
+    height: 500px;
+    background-color: aquamarine;
+    margin: auto;
+    margin-top: 40px;
+    border: 3px solid black;
+}
+.box-on{
+    height: 35%;
+    width: 100%;
+    background: rgb(27, 27, 27);
+    text-align: center;
+}
+.box-up{
+    height: 65%;
+    width: 100%;
+    background: white;
+    text-align: center;
+}
+#title{
+    padding-top: 20px;
+    font-size: 30px;
+    color: white;
+}
+#id{
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 10px;     
+}
+#text{
+    color: white;
+}
+#id-2{
+    color: rgb(0, 0, 0);
+    padding-top: 20px;
+    padding-bottom: 10px;    
+}

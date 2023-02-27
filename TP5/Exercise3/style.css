@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.main-box{
+    width: 500px;
+    height: 450px;
+    background-color: rgb(176, 223, 223);
+    margin: auto;
+    margin-top: 40px;
+    border: 3px solid black;
+}
+#img{
+    text-align: center;
+    font-size: 90px;
+}
+#title{
+    text-align: center;
+    font-family: Irish Grover;
+    font-size: 40px;
+}
+span{
+    color: red;
+}
+input,button{
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+button{
+    color: white;
+    background-color: blue;
+    cursor: pointer;
+}
+button:active{
+    background-color: red;
+}
+.main-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub-box{
+    margin: auto;
+    width: 250px;
+    background: rgb(69, 83, 237);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 5px; 
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">    
+        <p id="img">🧐</p>
+        <p id="title"> I know you <span>Gender</span></p>
+        <div class="main-btn">
+            <input id="myText" type="text" placeholder="Tell me your name">
+            <button onclick="fetchName()">Guess</button>
+        </div>
+        <div class="sub-main">
+            <div id="loading" hidden></div>
+            <p id="name">Name</p>
+            <p id="gender">Fender</p>
+            <p id="percent">%</p>
+        </div>
+    </div> 
+    <script src="script.js"></script>
+</body>
+</html>
