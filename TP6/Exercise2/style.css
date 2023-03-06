@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(255, 252, 248);
+        }
+        .content {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            flex-direction: column;
+        }
+        .content>h3 {
+            width: 300px;
+            text-align: center;
+            padding: 10px;
+            box-shadow: rgba(174, 173, 177, 0.8) 0px 0px 0px 3px;
+            border-radius: 5px;
+            background-color: aliceblue;
+            background-color: rgba(217, 210, 233, .8);
+            font-size: large;
+        }
+        .container {
+            display: flex;
+            width: 600px;
+            height: 500px;
+            margin: auto;
+            background-color: white;
+        }
+        #scroll {
+            overflow-y: auto;
+            width: 500px;
+            height: 100%;
+            background-color: rgb(189, 195, 195);
+        }
+        .num {
+            width: 50px;
+            text-align: end;
+            font-size: 2rem;
+        }
+        .data {
+            width: 470px;
+            height: 100px;
+            margin: 5px auto 0px;
+            padding: 5px 0px 0px 5px;
+            background-color: white;
+        }
+        @import url(https://fonts.googleapis.com/css?family=Roboto:100);
+        h1 {
+            font: 2em 'Roboto', sans-serif;
+            margin-bottom: 40px;
+        }
+        .loading {
+            display: flex;
+            justify-content: center;
+        }
+        .loader {
+            display: inline-block;
+            margin-top: 10px;
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, .3);
+            border-radius: 50%;
+            border-top-color: rgb(131, 125, 125);
+            animation: spin 1s ease-in-out infinite;
+            -webkit-animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin {
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        @-webkit-keyframes spin {
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
