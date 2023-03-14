@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <style>
+        body{
+            display: flex;
+            height: fit-content;
+        }
+        .left{
+            background-color:aliceblue;
+            display: flex;
+            justify-content: center;
+            width: 200px;
+            height: 100vh;
+        }
+        .addSession{
+            margin: 10px 0px;
+        }
+        .inp{
+            margin-bottom: 15px;
+        }
+        #right{
+            margin-left: 5px;
+            background-color:aliceblue;
+            width: 1030px;
+            height:max-content;
+        }
+        .book{
+            width: 200px;
+            height: 330px;
+            background-color: white;
+            padding-top: 25px;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+        #bookInfo{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <div class="addSession">
+            <div class="inp">
+                <label for="text">Name:</label><br>
+                <input type="text" name="" id="" placeholder="c programming">
+            </div>
+            <div class="inp">
+                <label for="text">Category:</label><br>
+                <input type="text" name="" id="" placeholder="coding">
+            </div>
+            <div class="inp">
+                <label for="text">Price</label><br>
+                <input type="text" name="" id="" placeholder="1,000 riels">
+            </div>
+            <div class="addBtn">
+                <button>Add</button>
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        <div id="loading">Loading...</div>
+        <div id="show">
+            <div id="bookInfo"></div>
+        </div>
+    </div>
+    <script>
+        let rightSide = document.getElementById('right');
+        let loading = document.getElementById('loading');
+        let show = document.getElementById('show');
+        rightSide.hidden = false;
+        rightSide.style.background = "white"
+        loading.hidden = false;
+        show.hidden = true;
+        fetch('https://jsonplaceholder.typicode.com/photos')
+            .then(async(result) => {
+                loading.hidden = true;
+                rightSide.style.background = "aliceblue";
+                show.hidden = false;
+                let book = document.getElementById('bookInfo');
+                let data = await result.json();
+                console.log(data);
+                let content = '';
+                for(let x of data){
+                    content += `
+                        <div class="book">
+                            <img src="${x.thumbnailUrl}" alt="">
+                            <p>${x.title}</p>
+                            <p>Album id: ${x.albumId} riel</p>
+                            <p>Category: ${x.id}</p>
+                            <a href="./detail?bookId=${x.id}">see</a>
+                        </div>
+                    `;
+                }
+                book.innerHTML = content;
+            })
+    </script>
+</body>
+</html>

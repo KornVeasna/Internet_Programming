@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Suggestion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+        }
+        .padding-top{
+            padding-top: 100px;
+        }
+        .wrapper{
+            width: 500px;
+            height: 450px;
+            border: 3px solid black;
+            margin: auto;
+        }
+        .emoji{
+            text-align: center;
+            font-size: 100px;
+        }
+        .text{
+            text-align: center;
+            font-size: 40px;
+        }
+        .btn{
+            padding: 10px;
+            text-align: center;
+        }
+        button{
+            color: white;
+            background-color: blue;
+        }
+        .container{
+            width: 65%;
+            margin: auto;
+            padding: 20px 20px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            box-shadow: 0 0 5px;
+            
+        }
+        #activity{
+            text-align: center;
+            font-weight: bold;
+            padding-bottom: 10px;
+        }
+        i{
+            width: 20px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="padding-top"></div>
+    <div class="wrapper">
+        <div class="emoji">🥱</div>
+        <div class="text">Are you Bored?</div>
+        <div class="btn"><button onclick="GetNewActivity()">Get me an acitivity</button></div>
+        <div class="container">
+            <div id="loading-text" hidden></div>
+            <div id="activity"></div>
+            <div id="type"></div>
+            <div id="participant"></div>
+            <div id="price"></div>
+            <div id="link"></div>
+        </div>
+    </div>
+    <script>
+        const loadingTextEle = document.getElementById("loading-text");
+        const activityName = document.getElementById("activity");
+        const type = document.getElementById("type");
+        const participant = document.getElementById("participant");
+        const price = document.getElementById("price");
+        const link = document.getElementById("link");
+        function GetNewActivity(){
+            loadingTextEle.hidden = false; 
+            fetch("https://www.boredapi.com/api/activity").then(async (res) => {
+                let data = await res.json();
+                loadingTextEle.hidden = true;
+                activityName.innerHTML = data["activity"];
+                type.innerHTML = `<i class="fa-solid fa-tag"></i> Type: `+data["type"];
+                participant.innerHTML = `<i class="fa-sharp fa-solid fa-people-group"></i> Participants: `+data["participants"];
+                price.innerHTML = `<i class="fa-solid fa-dollar-sign"></i> Price: `+data["price"]+"$";
+                link.innerHTML = `<i class="fa-solid fa-link"></i> Link: `+data["link"];
+            })
+        }
+        GetNewActivity();
+    </script>
+</body>
+</html>

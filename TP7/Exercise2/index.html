@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <title>Lists View</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            margin: 100px;
+        }
+        #container{
+            width: 1000px;
+            height: 700px;
+            border: 5px solid black;
+            display: grid;
+            justify-content: center;
+        }
+        #container h1{
+            font-family: 'Irish Grover', cursive;
+            padding-top: 30px;
+            text-align: center;
+        }
+        #block{
+            display: flex;
+            justify-content: center;
+        }
+        #block_list{
+            font-family: Arial, Helvetica, sans-serif;
+            width: 400px;
+            height: 500px;
+            background-color: #f4f4f4;
+            margin: 5px;
+            border-radius: 10px;
+            overflow-y: auto;
+        }
+        #block_display{
+            font-family: Arial, Helvetica, sans-serif;
+            border: 2px solid #f4f4f4;
+            width: 400px;
+            height: 500px;
+            background-color: white;
+            margin: 5px;
+            border-radius: 10px;
+            overflow-y: auto;
+        }
+        #loading{
+            margin-top: 250px;
+            width: 50%;
+            height: 100px;
+        }
+        .box_list{
+            display: flex;
+            margin-top: 5px;
+            margin-left: 10px;
+            width: 95%;
+            height: 100px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .image_list{
+            font-size: 40px;
+        }
+        .box_list:hover{
+            background-color: rgb(64, 105, 210);
+        }
+        .text1{
+            margin-top: 10px;
+        }
+        .text2{
+            margin-top: 10px;
+        }
+        .block_display_beer{
+            display: grid;
+            justify-content: center;
+        }
+        .image_beer{
+            display: flex;
+            justify-content: center;
+        }
+        .beer{
+            width: 200px;
+            height: 400px;
+            margin-top: 20px;
+        }
+        .description{
+            text-align: center;
+        }
+        .name{
+            margin-top: 10px;
+        }
+        .time{
+            margin-top: 10px;
+        }
+        .contribution{
+            margin-top: 10px;
+        }
+        .bulider{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div><h1>Find your Favorite 🥂?</h1></div>
+        <div id="block">
+            <div id="block_list"></div>
+            <div id="block_display"></div>
+        </div>
+    </div>
+    <script>
+        let list_data = document.getElementById("block_list"); 
+        let dataLoading =false;
+        let page=0;
+        let size=10;
+        let check=1;
+        let tmp="";
+        let parseddata="";
+        function click_display(){
+            let tmp1="";
+            for(let i=0,len=list_data.children.length;i<len;i++){
+                (function(index){
+                    list_data.children[i].onclick=function(){
+                        tmp1=`
+                        <div class="block_display_beer">
+                            <div class="image_beer"><img src="${parseddata[index].image_url}" class="beer"></img></div>
+                            <div class="description">
+                                <h3 class="name">${parseddata[index].name}</h3>
+                                <p class="time">${parseddata[index].first_brewed}</p>
+                                <p class="des">${parseddata[index].description}</p>
+                                <p class="contribution">Contribution</p>
+                                <p class="bulider">( ${parseddata[index].contributed_by} )</p>
+                            </div>
+                        </div>`
+                        document.getElementById("block_display").innerHTML=tmp1;
+                    }
+                })(i)
+            }
+        }
+        function display(){
+            let tmp="";
+            const str = localStorage.getItem('data');
+            parseddata = JSON.parse(str);
+            if(str!== null && check ==1){
+                console.log();
+                for(let i=0 ; i<parseddata.length;i++){
+                    tmp +=
+                    `<div class="box_list"> 
+                        <div class="image_list">🍻</div>
+                        <div>
+                            <p class="text1">${parseddata[i].name}</p>
+                            <p class="text2">${parseddata[i].description.substring(0, 30).concat('...')}</p>
+                        </div>
+                    </div>`
+                }
+                list_data.innerHTML=tmp;
+                number_page=parseddata.length/10;
+                page=parseddata.length;
+                size=page+10;
+            }
+            if(size<81){
+                fetch(`https://api.punkapi.com/v2/beers? page=${page}}&per_page=${size}`).then(async (res) =>{
+                    let data_list = await res.json();
+                    const data_json = JSON.stringify(data_list);
+                    window.localStorage.setItem('data', data_json);
+                    for(let i=page ; i<data_list.length;i++){
+                        tmp +=
+                            `<div class="box_list"> 
+                                <div>🍻</div>
+                                <div class="list_each_data">
+                                    <p class="text1">${data_list[i].name}</p>
+                                    <p class="text2">${data_list[i].description.substring(0, 30).concat('...')}</p>
+                                </div>
+                            </div> `
+                    }
+                    document.getElementById("block_list").innerHTML=tmp;
+                    click_display()
+                })
+            }
+        }
+        list_data.addEventListener("scroll", (event) => {
+            const { scrollTop, clientHeight, scrollHeight } = list_data;
+            if ((clientHeight + scrollTop) >= scrollHeight*0.98) {
+                if (!dataLoading) {
+                    size = page +10;
+                    display()
+                    
+                }
+            }
+        });
+        display()
+        click_display()
+    </script>
+</body>
+</html>

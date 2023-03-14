@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Detail</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            height: 700px;
+            align-items: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .description{
+            width: 100%;
+            height: 200px;
+            background-color: darkslategray;
+        }
+        .thumbnail{
+            width: 100%;
+            height: 500px;
+        }
+        .center{
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin: 10px auto;
+        }
+        .resize{
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0px auto;
+            font-size: 20px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="description">
+        <div id="firstRow" class="center"></div>
+    </div>
+    <div class="thumbnail">
+        <div id="secondRow" class="resize"></div>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookId = urlParams.get('bookId');
+        let firstRow = document.getElementById('firstRow');
+        let secondRow = document.getElementById('secondRow');
+        fetch(`https://jsonplaceholder.typicode.com/photos/${bookId}`)
+            .then(async(result)=>{
+                let data = await result.json();
+                let firstContent = `
+                    <h3>${data.title}</h3>
+                    <p>${data.id}</p>
+                    <p>Resize the browser window to see that this page is responsive by the way</p> 
+                `
+                let secondContent = `
+                    <p>${data.id}</p>
+                    <img src="${data.thumbnailUrl}" alt="">
+                `;
+                firstRow.innerHTML = firstContent;
+                secondRow.innerHTML = secondContent;
+            })
+    </script>
+</body>
+</html>
